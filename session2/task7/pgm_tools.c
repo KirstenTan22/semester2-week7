@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
     do {
         choice = -1;
         display_menu();
-        while (choice <= 1)
+        while (choice < 1|| choice > 4)
             choice = get_user_menu_choice("Enter choice");
 
         switch (choice) {
@@ -314,7 +314,7 @@ void print_image_values(unsigned char **pixels, int height, int width) {
 unsigned char **invert_image_colors(unsigned char **original_image, int height, int width, int max_gray) {
     /* Allocate memory for the inverted image */
     unsigned char **inverted_image = allocate_image_array(height, width);
-    if (inverted_image == NULL) {
+    if (original_image == NULL) {
         return NULL;
     }
 
